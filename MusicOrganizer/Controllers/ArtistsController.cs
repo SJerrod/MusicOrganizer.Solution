@@ -20,7 +20,7 @@ namespace MusicOrganizer.Controllers
       return View();
     }
 
-    [HttpPost("/categories")]
+    [HttpPost("/artists")]
     public ActionResult Create(string artistName)
     {
       Artist newArtist = new Artist(artistName);
@@ -28,11 +28,11 @@ namespace MusicOrganizer.Controllers
     }
 
     [HttpPost("/artists/{artistId}/records")]
-    public ActionResult Create(int artistId, string recordTitle)
+    public ActionResult Create(int artistId, string recordName)
     {
       Dictionary<string, object> model = new Dictionary<string, object>();
       Artist foundArtist = Artist.Find(artistId);
-      Record newRecord = new Record(recordTitle);
+      Record newRecord = new Record(recordName);
       foundArtist.AddRecord(newRecord);
       List<Record> artistRecords = foundArtist.Records;
 

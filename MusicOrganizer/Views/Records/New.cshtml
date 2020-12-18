@@ -1,0 +1,8 @@
+<h1>Add a new record to @Model.Name's discography</h1>
+
+<form action="/artists/@Model.Id/records" method="post">
+    <input id="artistId" name="artistId" type="hidden" value="@Model.Id">
+    <labe for="recordName">Enter the name of another record</label>
+    <input id="recordName" name="recordName" type="text">
+    <button type="submit">Add Record</button>
+</form>

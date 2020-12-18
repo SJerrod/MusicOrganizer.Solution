@@ -5,7 +5,7 @@
 <ol>
   @foreach (Record record in @Model["records"])
   {
-    <li><a href="/artists/@Model["artist"].Id/records/@record.Id">@record.Title</a></li>
+    <li><a href="/artists/@Model["artist"].Id/records/@record.RecordId">@record.RecordName</a></li>
   }
 </ol>
 

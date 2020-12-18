@@ -1,0 +1,18 @@
+<h1>This Record's Tracklist</h1>
+
+<h2>Artist: @Model["artist"].Name</h2>
+<h3>@Model["record"].RecordName</h2>
+
+@if (@Model["record"].Songs.Count == 0)
+{
+  <h3>No songs have been added yet!</h3>
+}
+
+@* @foreach (Song song in @Model["record"].Songs)
+{
+  <h3><a href="/artists/@Model["artist"].Id/records/@Model["record"].RecordId/song/@Model["song"].SongId>@Model["song"].SongName</a></h3>
+} *@
+
+
+<a href='/artists/@Model["artist"].Id/records/Model["record"].RecordId/songs/new'>Add a new song</a>
+<a href='/artist/@Model["artist"].Id/records'>View this artist's full discography.</a>
